@@ -47,21 +47,31 @@ class CardBehavior: UIDynamicBehavior {
         addChildBehavior(push)
     }
     
+    // adding gravity
+    var gravityBehaviour: UIGravityBehavior = {
+        let behaviour = UIGravityBehavior()
+        behaviour.magnitude = 0 // until we are on screen I don't want acceleromrter on, no gravity until that moment
+        return behaviour
+    }()
+    
     func addItem(_ item: UIDynamicItem) {
         collisionBehaviour.addItem(item)
         itemBehaviour.addItem(item)
+        gravityBehaviour.addItem(item)
         push(item)
     }
     
     func removeItem(_ item: UIDynamicItem) {
         collisionBehaviour.removeItem(item)
         itemBehaviour.removeItem(item)
+        gravityBehaviour.removeItem(item)
     }
     
     override init() {
         super.init()
         addChildBehavior(collisionBehaviour)
         addChildBehavior(itemBehaviour)
+        addChildBehavior(gravityBehaviour)
     }
     
     convenience init(in animator: UIDynamicAnimator) {

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreMotion
 class ViewController: UIViewController {
 
     var deck = PlayingCardDeck()
@@ -17,6 +17,33 @@ class ViewController: UIViewController {
     lazy var animator = UIDynamicAnimator(referenceView: view)
     
     lazy var cardBehaviour = CardBehavior(in: animator)
+    
+    //turn on accelerometer while we are on screen, and off when off screen
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // check if accelerometer availabel
+        if CMMotionManager.shared.isAccelerometerAvailable {
+            cardBehaviour.gravityBehaviour.magnitude = 1.0 // turn on gravity in card behaviour
+            CMMotionManager.shared.accelerometerUpdateInterval = 1/10 //setting the update interval
+            CMMotionManager.shared.startAccelerometerUpdates(to: .main) { (data, error) in
+                if var x = data?.acceleration.x, var y = data?.acceleration.y {
+                    // changing coordinate systems from software ones to real
+                    switch UIDevice.current.orientation {
+                    case .portrait: y *= -1
+                    case .portraitUpsideDown: break
+                    case .landscapeRight: swap(&x, &y)
+                    case .landscapeLeft: swap(&x, &y); y *= -1
+                    default: x = 0; y = 0;
+                    }
+                    self.cardBehaviour.gravityBehaviour.gravityDirection = CGVector(dx: x, dy: y)
+                }
+            } //register a closure with a motion manager with accelerometer updates
+        }
+    }
+    
+    
+    
+    
     
     //
     //    @IBOutlet weak var playingCardView: PlayingCardView! {
@@ -51,6 +78,12 @@ class ViewController: UIViewController {
     //    }
     //
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // stopping the accelerometer recore
+        cardBehaviour.gravityBehaviour.magnitude = 0
+        CMMotionManager.shared.stopAccelerometerUpdates()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         var cards = [PlayingCard]()

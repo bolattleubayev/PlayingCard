@@ -16,6 +16,7 @@
 		FA98272C234710F10090CBBD /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98272B234710F10090CBBD /* PlayingCardDeck.swift */; };
 		FA98272E2347280D0090CBBD /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98272D2347280D0090CBBD /* PlayingCardView.swift */; };
 		FA98276123571BC50090CBBD /* CardBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98276023571BC50090CBBD /* CardBehavior.swift */; };
+		FABADF55237EEB6700972712 /* CMMotionManager+shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABADF54237EEB6700972712 /* CMMotionManager+shared.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FA98272B234710F10090CBBD /* PlayingCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
 		FA98272D2347280D0090CBBD /* PlayingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
 		FA98276023571BC50090CBBD /* CardBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBehavior.swift; sourceTree = "<group>"; };
+		FABADF54237EEB6700972712 /* CMMotionManager+shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMMotionManager+shared.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +64,11 @@
 		FA9827152346F0390090CBBD /* PlayingCard */ = {
 			isa = PBXGroup;
 			children = (
-				FA9827182346F0390090CBBD /* ViewController.swift */,
-				FA98276023571BC50090CBBD /* CardBehavior.swift */,
-				FA98272D2347280D0090CBBD /* PlayingCardView.swift */,
 				FA98271A2346F0390090CBBD /* Main.storyboard */,
-				FA9827292346F09F0090CBBD /* PlayingCard.swift */,
-				FA98272B234710F10090CBBD /* PlayingCardDeck.swift */,
-				FA98271D2346F03B0090CBBD /* Assets.xcassets */,
+				FA98276023571BC50090CBBD /* CardBehavior.swift */,
+				FA9827182346F0390090CBBD /* ViewController.swift */,
+				FABADF54237EEB6700972712 /* CMMotionManager+shared.swift */,
+				FABADF53237EEB0B00972712 /* PlayingCard */,
 				FA9827282346F0730090CBBD /* Supporting Files */,
 				FA9827222346F03B0090CBBD /* Info.plist */,
 			);
@@ -78,10 +78,21 @@
 		FA9827282346F0730090CBBD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA98271D2346F03B0090CBBD /* Assets.xcassets */,
 				FA9827162346F0390090CBBD /* AppDelegate.swift */,
 				FA98271F2346F03B0090CBBD /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FABADF53237EEB0B00972712 /* PlayingCard */ = {
+			isa = PBXGroup;
+			children = (
+				FA98272D2347280D0090CBBD /* PlayingCardView.swift */,
+				FA9827292346F09F0090CBBD /* PlayingCard.swift */,
+				FA98272B234710F10090CBBD /* PlayingCardDeck.swift */,
+			);
+			path = PlayingCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +170,7 @@
 				FA9827192346F0390090CBBD /* ViewController.swift in Sources */,
 				FA98272C234710F10090CBBD /* PlayingCardDeck.swift in Sources */,
 				FA98272A2346F09F0090CBBD /* PlayingCard.swift in Sources */,
+				FABADF55237EEB6700972712 /* CMMotionManager+shared.swift in Sources */,
 				FA98272E2347280D0090CBBD /* PlayingCardView.swift in Sources */,
 				FA9827172346F0390090CBBD /* AppDelegate.swift in Sources */,
 				FA98276123571BC50090CBBD /* CardBehavior.swift in Sources */,
