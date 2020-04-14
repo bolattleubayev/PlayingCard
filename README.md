@@ -1,6 +1,6 @@
 # Playing Card
 
-This is an implementation of in-class example of EmojiArt from Stanford CS193p Fall 2017-18 on iTunes U by Paul Hegarty. The project was adapted for Xcode 9 and Swift 4
+This is an implementation of in-class example of Playing Card from Stanford CS193p Fall 2017-18 on iTunes U by Paul Hegarty. The project was adapted for Xcode 9 and Swift 4
 
 This app explores the possibilities of animation and drawing in iOS. Cards are moving randomly and interact with each other. If hit another card they repe, also cards are attracted to one of the sides of the screen by "gravity".
 
